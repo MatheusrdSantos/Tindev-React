@@ -4,6 +4,8 @@ import like from '../assets/like.svg';
 import dislike from '../assets/dislike.svg';
 import "./Main.css";
 import api from '../services/api';
+import { Link } from 'react-router-dom';
+
 export default function Main({ match }){
     const [users, setUsers] = useState([]);
     useEffect(() => {
@@ -36,7 +38,9 @@ export default function Main({ match }){
 
     return (
         <div className="main-container">
-            <img src={logo} alt="Tindev"/>
+            <Link to="/">
+                <img src={logo} alt="Tindev"/>
+            </Link>
                 {users.length>0? (
                     <ul>
                     {users.map(user => (
